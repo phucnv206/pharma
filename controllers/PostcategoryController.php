@@ -12,7 +12,7 @@ use yii\filters\AccessControl;
 use yii\filters\VerbFilter;
 use yii\data\Pagination;
 
-class PostCategoryController extends Controller
+class PostcategoryController extends Controller
 {
     
     public $layout = 'dashboard';
