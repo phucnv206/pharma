@@ -1,0 +1,23 @@
+.ul-clear{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+.ul-clear > li{
+    display: inline-block;
+}
+.display-table{
+    display: table;
+}
+.display-table-cell{
+    display: table-cell;
+}
+.margin-top-15{
+    margin-top: 15px;
+}
+.margin-bottom-30{
+    margin-bottom: 30px;
+}
+.margin-right-15{
+    margin-right: 15px;
+}
