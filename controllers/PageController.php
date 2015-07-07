@@ -8,6 +8,7 @@ use yii\data\ActiveDataProvider;
 use yii\web\NotFoundHttpException;
 use yii\filters\AccessControl;
 use yii\filters\VerbFilter;
+use app\components\Helpers;
 use app\models\Page;
 
 class PageController extends Controller
@@ -38,6 +39,11 @@ class PageController extends Controller
         ];
     }
     
+    public function actionAjaxcall()
+    {
+        echo Helpers::renderOption(Page::listPagesUrl());
+    }
+
     public function actionList()
     {
         \Yii::$app->language = 'vi-VN';

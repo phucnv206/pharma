@@ -44,6 +44,10 @@ header nav{
 header nav .logo{
     padding: 5px 0;
 }
+header nav .logo img{
+    max-width: 135px;
+    max-height: 41px;
+}
 header nav ul{
     position: relative;
     text-transform: uppercase;
@@ -94,7 +98,10 @@ header nav .product-dropdown ul li a{
     padding: 0;
     margin-top: 0;
 }
-
+#slide{
+    height: 500px;
+    overflow: hidden;
+}
 #main .heading{
     font-size: 24px;
     text-align: center;

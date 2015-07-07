@@ -19,11 +19,7 @@ class Category extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['name', 'status'], 'required'],
-            [['description'], 'string'],
-            [['status'], 'in', 'range' => array_keys(self::listStatus())],
-            [['name', 'slug'], 'string', 'max' => 100],
-            [['thumbnail'], 'string', 'max' => 255]
+            [['name', 'status'], 'safe'],
         ];
     }
 
@@ -31,8 +27,6 @@ class Category extends \yii\db\ActiveRecord
     {
         return [
             'name' => 'Tên',
-            'thumbnail' => 'Ảnh',
-            'description' => 'Mô tả',
             'status' => 'Trạng thái',
         ];
     }

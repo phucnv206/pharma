@@ -16,8 +16,7 @@ class Menu extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['name', 'url', 'status'], 'required'],
-            [['status'], 'in', 'range' => array_keys(self::listStatus())],
+            [['name', 'url', 'status'], 'safe'],
         ];
     }
 
@@ -27,6 +26,7 @@ class Menu extends \yii\db\ActiveRecord
             'name' => 'Tên',
             'url' => 'Liên kết',
             'status' => 'Trạng thái',
+            'type' => 'Loại liên kết',
         ];
     }
     

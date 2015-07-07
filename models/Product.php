@@ -2,6 +2,7 @@
 
 namespace app\models;
 use app\components\Helpers;
+use yii\helpers\Url;
 
 class Product extends \yii\db\ActiveRecord
 {
@@ -63,6 +64,16 @@ class Product extends \yii\db\ActiveRecord
         ];
     }
 
+    public static function listProductsUrl()
+    {
+        $model = Product::find()->asArray()->all();
+        $result = [];
+        foreach ($model as $item) {
+            $url = Url::to(['product/view', 'id' => $item['id'], 'slug' => $item['slug']]);
+            $result[$url] = $item['name'] . ' - ' . Helpers::formatPrice($item['price']);
+        }
+        return $result;
+    }
 
     public static function getStatusLabel($status)
     {

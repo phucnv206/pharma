@@ -2,6 +2,7 @@
 
 namespace app\models;
 use app\components\Helpers;
+use yii\helpers\Url;
 
 class Post extends \yii\db\ActiveRecord
 {
@@ -69,6 +70,17 @@ class Post extends \yii\db\ActiveRecord
         } else {
             return false;
         }
+    }
+    
+    public static function listPostsUrl()
+    {
+        $model = Post::find()->asArray()->all();
+        $result = [];
+        foreach ($model as $item) {
+            $url = Url::to(['post/view', 'id' => $item['id'], 'slug' => $item['slug']]);
+            $result[$url] = $item['title'];
+        }
+        return $result;
     }
     
 }

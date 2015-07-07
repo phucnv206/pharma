@@ -11,6 +11,7 @@ use yii\filters\AccessControl;
 use yii\filters\VerbFilter;
 use app\models\Category;
 use app\models\Order;
+use app\components\Helpers;
 
 class ProductController extends Controller
 {
@@ -156,6 +157,11 @@ class ProductController extends Controller
         } else {
             throw new NotFoundHttpException('The requested page does not exist.');
         }
+    }
+    
+    public function actionAjaxcall()
+    {
+        echo Helpers::renderOption(Product::listProductsUrl());
     }
 
 }

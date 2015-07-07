@@ -18,7 +18,7 @@ $this->params['breadcrumbs'][] = $this->title;
         'inputTemplate' => '<div class="input-group">{input}<span class="input-group-btn"><button type="button" id="browse-btn" class="btn btn-default"><i class="fa fa-search"></i></a></span></div>'
     ])->textInput(['maxlength' => 255]) ?>
     <div class="form-group row">
-        <div class="col-sm-3 col-sm-offset-3"><img src="<?= $model->logo ?>" class="logo-preview img-responsive img-thumbnail"></div>
+        <div class="col-sm-3 col-sm-offset-3"><img src="<?= $model->logo . '?' . rand(0, 99) ?>" class="logo-preview img-responsive img-thumbnail"></div>
     </div>
     
     <?= $form->field($model, 'watermark')->checkbox(); ?>

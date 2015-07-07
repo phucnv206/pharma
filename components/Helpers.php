@@ -52,5 +52,24 @@ class Helpers
     {
         return number_format($price, 0, ',', '.') . ' đ';
     }
+    
+    public static function listUrlType()
+    {
+        return [
+            'pages' => 'Trang',
+            'products' => 'Sản phẩm',
+            'posts' => 'Bài viết',
+            'external' => 'Liên kết ngoại',
+        ];
+    }
+    
+    public static function renderOption($options = [])
+    {
+        $html = '';
+        foreach ($options as $k=>$v) {
+            $html .= '<option value="' . $k . '">' . $v . '</option>';
+        }
+        return $html;
+    }
 
 }

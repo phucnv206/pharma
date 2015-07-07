@@ -6,7 +6,7 @@ use app\components\NewsWidget;
 $this->title = Yii::$app->name;
 ?>
 <div id="site-index">
-    <?= SlideWidget::widget(['id' => Yii::$app->params['slide_1_id']]); ?>
+    <?= SlideWidget::widget(); ?>
     <div class="container">
         <div class="heading">
             <div class="line"></div>

@@ -18,14 +18,6 @@ $this->params['breadcrumbs'][] = $this->title;
             ['class' => 'yii\grid\SerialColumn'],
             'name',
             [
-                'attribute' => 'thumbnail',
-                'format' => 'image',
-                'contentOptions' => ['class' => 'thumbnail-list'],
-                'value' => function ($model) {
-                    if ($model->thumbnail != null) return $model->thumbnail;
-                }
-            ],
-            [
                 'attribute' => 'status',
                 'value' => function ($model) {
                     return $model->getStatusLabel($model->status);

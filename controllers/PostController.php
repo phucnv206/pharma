@@ -9,6 +9,7 @@ use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\AccessControl;
 use yii\filters\VerbFilter;
+use app\components\Helpers;
 
 class PostController extends Controller
 {
@@ -106,5 +107,10 @@ class PostController extends Controller
         } else {
             throw new NotFoundHttpException('The requested page does not exist.');
         }
+    }
+    
+    public function actionAjaxcall()
+    {
+        echo Helpers::renderOption(Post::listPostsUrl());
     }
 }

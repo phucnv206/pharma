@@ -29,6 +29,6 @@ function open_popup(url)
     window.open(url, 'Media Manager', 'scrollbars=1,width=' + w + ',height=' + h + ',top=' + t + ',left=' + l);
 }
 function responsive_filemanager_callback(field_id) {
-    var url = $('#' + field_id).val();
+    var url = $('#' + field_id).val() + '?' + Math.random();
     $('.logo-preview').attr('src', url);
 }
